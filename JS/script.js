@@ -46,21 +46,21 @@ function calculateScore(player, computer) {
 }
 
 //Plays five rounds and keeps track of scores
-function game() {
-    let player = 0;
-    let comp = 0;
-    for (let i = 0; i < 5; i++) {
-        let result = playRound(prompt("Make your pick!"), getComputerChoice());
-        if (result === "You win!") {
-            player++;
-        }
-        if (result === "You lose!") {
-            comp++;
-        }
-        console.log(result);
-    }
-    calculateScore(player, comp);
-}
+// function game() {
+//     let player = 0;
+//     let comp = 0;
+//     for (let i = 0; i < 5; i++) {
+//         let result = playRound(prompt("Make your pick!"), getComputerChoice());
+//         if (result === "You win!") {
+//             player++;
+//         }
+//         if (result === "You lose!") {
+//             comp++;
+//         }
+//         console.log(result);
+//     }
+//     calculateScore(player, comp);
+// }
 
 //Runs game
 game();
