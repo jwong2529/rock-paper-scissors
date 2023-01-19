@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+h1 {
+    font-size: 48px;
+}
+.rules {
+    font-size: 28px;
+}
+
+.top-half {
+    background-color: rgb(135, 135, 135);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 28px;
+}
+
+.scoreboard {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.bubble {
+    background-color: #1e1d1d;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: whitesmoke;
+}
+
+.score-dash {
+    height: 10px;
+    width: 50px;
+    background-color: #1e1d1d;
+}
+
+.game-area {
+    background-color: rgb(247, 247, 247);
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.you-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.your-choices {
+    display: flex;
+    gap: 15px;
+}
+
+.cpu-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.box {
+    border: solid black 3px;
+    border-radius: 8px;
+    font-size: 100px;
+    padding: 16px;
+}
