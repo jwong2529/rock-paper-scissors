@@ -1,4 +1,14 @@
 
+let yourScore = document.querySelector(".your-score");
+let yourPoints = 0;
+yourScore.textContent = yourPoints;
+let cpuScore = document.querySelector(".cpu-score");
+let cpuPoints = 0;
+cpuScore.textContent = cpuPoints;
+
+const playerRock = document.querySelector(".rock");
+const playerPaper = document.querySelector(".paper");
+const playerScissors = document.querySelector(".scissors");
 const cpuChoice = document.querySelector(".cpu-choice");
 
 //Computer randomly picks between rock, paper, or scissors
@@ -8,6 +18,7 @@ function getComputerChoice() {
     return choices[random];
 }
 
+//Changes icon in CPU box based on random choice
 function checksComputerChoice(choice) {
     if (choice === "ROCK") {
         cpuChoice.textContent = "🪨";
@@ -20,25 +31,26 @@ function checksComputerChoice(choice) {
     }
 }
 
+//Resets icon in CPU box after 1 second
 function resetComputerChoice() {
     setTimeout(() => {
         cpuChoice.textContent = "❓";
     }, 1000)
 }
 
+//Changes box border colors based on right/wrong choice
 function rightAnswer(box) {
     box.style.borderColor = "green";
 }
-
 function wrongAnswer(box) {
     box.style.borderColor = "red";
 }
-
 function tieAnswer(box1, box2) {
     box1.style.borderColor = "yellow";
     box2.style.borderColor = "yellow";
 }
 
+//Resets box border colors after 1 second
 function resetBorders(box1, box2) {
     setTimeout(() => {
         box1.style.borderColor  = "black";
@@ -46,7 +58,9 @@ function resetBorders(box1, box2) {
     }, 1000)
 }
 
-//Converts input into uppercase and returns result of a single round played
+//Plays one match
+//This function is kind of bloated and I probably should have made another function. 
+//I also should have had a better system for inputting arguments for the user's choices.
 function playRound(playerSelection, computerSelection) {
     let play = playerSelection.toUpperCase();
     checksComputerChoice(computerSelection);
@@ -124,11 +138,13 @@ function playRound(playerSelection, computerSelection) {
 const overlay = document.querySelector("#overlay");
 const mask = document.querySelector("#mask");
 
+//Sets the end-game overlay by blurring out background
 function toggleOverlay() {
     overlay.style.display = "block";
     mask.style.filter = "blur(30px)";
 }
 
+//Sets end-game result by calculating winner
 const result = document.querySelector(".result");
 function calculatingResult() {
     if (yourPoints > cpuPoints) {
@@ -138,6 +154,45 @@ function calculatingResult() {
         result.textContent = "You lost! 😔";
     }
 }
+
+//Updates the scoreboard
+function updateYourScore() {
+    yourScore.textContent = yourPoints;
+}
+function updateCpuScore() {
+    cpuScore.textContent = cpuPoints;
+}
+
+//Plays a round when user clicks one of their game options
+playerRock.addEventListener('click', function(e) {
+    playRound("ROCK", getComputerChoice());
+});
+playerPaper.addEventListener('click', function(e) {
+    playRound("PAPER", getComputerChoice());
+});
+playerScissors.addEventListener('click', function(e) {
+    playRound("SCISSORS", getComputerChoice());
+});
+
+//Resets the game by unblurring background, hiding overlay, and changing scores back to 0
+const replayButton = document.querySelector(".play-again");
+function replay() {
+    overlay.style.display = "none";
+    mask.style.filter = "blur(0px)";
+    yourPoints = 0;
+    cpuPoints = 0;
+    updateYourScore();
+    updateCpuScore();
+}
+
+//Resets game when user presses button
+replayButton.addEventListener('click', function(e) {
+    replay();
+});
+
+
+//The functions below were written for the beginning RPS assignment.
+
 
 //Outputs final score message from five-round game
 // function calculateScore(player, computer) {
@@ -174,48 +229,3 @@ function calculatingResult() {
 
 
 
-let yourScore = document.querySelector(".your-score");
-let yourPoints = 0;
-yourScore.textContent = yourPoints;
-let cpuScore = document.querySelector(".cpu-score");
-let cpuPoints = 0;
-cpuScore.textContent = cpuPoints;
-
-const playerRock = document.querySelector(".rock");
-const playerPaper = document.querySelector(".paper");
-const playerScissors = document.querySelector(".scissors");
-
-
-function updateYourScore() {
-    yourScore.textContent = yourPoints;
-}
-function updateCpuScore() {
-    cpuScore.textContent = cpuPoints;
-}
-
-playerRock.addEventListener('click', function(e) {
-    playRound("ROCK", getComputerChoice());
-});
-
-playerPaper.addEventListener('click', function(e) {
-    playRound("PAPER", getComputerChoice());
-});
-
-playerScissors.addEventListener('click', function(e) {
-    playRound("SCISSORS", getComputerChoice());
-});
-
-const replayButton = document.querySelector(".play-again");
-
-function replay() {
-    overlay.style.display = "none";
-    mask.style.filter = "blur(0px)";
-    yourPoints = 0;
-    cpuPoints = 0;
-    updateYourScore();
-    updateCpuScore();
-}
-
-replayButton.addEventListener('click', function(e) {
-    replay();
-});
