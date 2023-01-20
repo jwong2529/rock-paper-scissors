@@ -63,4 +63,5 @@ function calculateScore(player, computer) {
 // }
 
 //Runs game
-game();
+// game();
+

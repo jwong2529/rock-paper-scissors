@@ -74,6 +74,21 @@ h1 {
     display: flex;
     gap: 15px;
 }
+.rock:hover,
+.rock:focus {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: translateY(-6px);
+}
+.paper:hover,
+.paper:focus {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: translateY(-6px);
+}
+.scissors:hover,
+.scissors:focus {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: translateY(-6px);
+}
 
 .cpu-right {
     display: flex;
