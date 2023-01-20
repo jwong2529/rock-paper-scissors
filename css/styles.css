@@ -88,3 +88,40 @@ h1 {
     font-size: 100px;
     padding: 16px;
 }
+
+/* display: block to show, none to hide */
+#overlay {
+    position: fixed;
+    display: none;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(89, 87, 87);
+    border: solid black 1px;
+    border-radius: 8px;
+    padding: 30px 60px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.result {
+    font-size: 38px;
+}
+
+.play-again {
+    border: none;
+    border-radius: 15px;
+    padding: 5px 20px;
+    background-color: red;
+}
+
+/* 0 px for no blur, 30px for blur */
+#mask {
+    filter: blur(0px);   
+}
