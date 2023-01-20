@@ -74,18 +74,15 @@ h1 {
     display: flex;
     gap: 15px;
 }
-.rock:hover,
-.rock:focus {
+.rock:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transform: translateY(-6px);
 }
-.paper:hover,
-.paper:focus {
+.paper:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transform: translateY(-6px);
 }
-.scissors:hover,
-.scissors:focus {
+.scissors:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     transform: translateY(-6px);
 }
@@ -114,7 +111,7 @@ h1 {
     background-color: rgb(89, 87, 87);
     border: solid black 1px;
     border-radius: 8px;
-    padding: 30px 60px;
+    padding: 30px 48px;
 }
 
 .content {
@@ -134,6 +131,11 @@ h1 {
     border-radius: 15px;
     padding: 5px 20px;
     background-color: red;
+}
+
+.play-again:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transform: translateY(-1px);
 }
 
 /* 0 px for no blur, 30px for blur */
